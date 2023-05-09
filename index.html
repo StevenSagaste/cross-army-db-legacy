@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>CROSS ARMY DB</title>
+    <link rel="shortcut icon" href="img/1x/eso.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/diseño.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="menu">
+        <nav>
+            <a href="a.html">Asistencias</a>
+            <a href="atleta.html">Atletas</a>
+            <a href="coach.html">Coach</a>
+            <a href="asistente.html">Asistentes</a>
+            <a href="pag.html">Pagos</a>
+            <a href="conpag.html">Administrar Precios</a>
+        </nav>
+            <a href="ubicacion.html">
+                <img class="icon" src="img/1x/eso.png" alt="">
+            </a>
+        <section class="textos-header">
+            <h1>CROSS ARMY</h1>
+            <h2>Somos <b class="diff">Diferentes</b> | Somos los <b class="diff">Mejores</b></h2>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: rgb(40, 40, 40);"></path>
+            </svg></div>
+    </header>
+    <main>
+        <section class="reg">
+            <div class="contenedor"  id="registro">
+                <h2 class="titulo">Registro</h2>
+                <form class="formulario">
+                    <div style="display: flex;">
+                        <label for="date" style="padding-right: 10px;">Fecha: </label>
+                        <div id="date"></div>
+                    </div>
+
+                    <div style="display: flex;">
+                        <label for="reloj" style="padding-right: 10px;">Hora: </label>  
+                        <div id="reloj"></div>
+                    </div>
+                    <div style="display: flex;">
+                        <label for="turno" style="padding-right: 10px;">Turno: </label>
+                        <div id="turno"></div>
+                    </div>
+                    <div style="display: flex;">
+                        <label for="ref" style="padding-right: 10px; padding-bottom: 20px;">No. de Referencia: </label>
+                        <div id="ref"></div>
+                    </div>
+        
+                    <div class ="form-group">
+                        <label for="atop">Atelta:</label>
+                        <select class="custom-select" name="atop" id="atop" required></select>               
+                    </div>
+        
+                    <div class ="form-group">
+                        <label for="coop">Coach en turno:</label>
+                        <select class="custom-select" name="coop" id="coop" required></select>
+                    </div> 
+          
+                    <div>
+                        <label for="asop">Asistente:</label>
+                        <select class="custom-select" name="asop" id="asop" required></select> 
+                    </div>
+                  <br>
+         
+                  <button class="btn btn-info" id="boton" onclick="guardar()">Guardar</button><div id="refcount"></div>
+                 </form>
+            </div>
+        </section>
+
+        <div class="wave2" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+            style="height: 100%; width: 100%;">
+            <path d="M0.00,49.99 C150.00,150.00 271.49,-49.99 500.00,49.99 L500.00,0.00 L0.00,0.00 Z"
+                style="stroke: none; fill: rgb(40,40,40);"></path>
+        </svg></div>
+        <div></div>
+
+    <section class="container">
+            <div class="titulo2">
+                <h1>Asistencias</h1>
+                <form class="formulario">
+                    <section>
+                        <div class="filtro">
+                            <select name="ft" id="ft" onchange="filtrado();">
+                                <option value="" disabled="disabled" selected="true">Filtrar por Cantidad</option>
+                                <option value="todos">Mostrar todo</option>
+                                <option value="10">Mostrar últimos 10 registros</option>
+                                <option value="20">Mostrar últimos 20 registros</option>
+                            </select>
+                            <label for="dt" style="padding-right: 20px;"></label>
+                            <input type="date" id="dt">
+                            <a class="validate"  onclick="validate();">Filtrar</a>
+                        </div>
+                    </section>
+                </form>
+                <div id="tasistencias"></div>
+            </div>
+        <script src="a.js"></script>
+        <!-- jQuery first para framework Jquery, Popper.js para ToolTips, y Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <!-- DONDE TENDREMOS NUESTROS CODIGOS PARA GRABAR Y CONSULTA DE DATOS EXISTENTES -->
+        
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+        
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-analytics.js"></script>
+    </section>
+        
+    </main>
+    <footer>
+        <div class="contenedor-footer" id="contacto">
+            <div class="content-foo">
+                <h4>Telefono</h4>
+                <p>673 134 3962</p>
+            </div>
+            <div class="content-foo">
+                <h4>Email</h4>
+                <p>contacto@crossarmy.mx</p>
+            </div>
+            <div class="content-foo">
+                <h4>Ubicacion</h4>
+                <p>Guamuchil, Sin</p>
+            </div>
+        </div>
+        <section class="mapa">
+            <div class="logos">
+                <a href="https://www.facebook.com/Cross-Army-Guamuchil-579597705397488/">
+                    <img class="social" src="img/facebook-32.png" alt="">
+                </a>
+                <a href="https://chat.whatsapp.com/FO7mqeouoo43JqRFbMuYUa">
+                    <img class="social" src="img/whatsapp-32.png" alt="">
+                </a>
+                <a href="https://www.instagram.com/explore/locations/282908704/mexico/guamuchil-sinaloa/cross-army-guamuchil/">
+                    <img class="social" src="img/instagram-32.png" alt="">
+                </a>
+            </div>
+        </section>
+        <h2 class="titulo-final">  | ©CrossArmy |</h2>
+    </footer>
+</body>
+
+</html>

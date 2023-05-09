@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+  <head>
+     <!-- Conexion a Firebase JS -->
+     <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+     <meta charset="utf-8">
+     <!-- Requerido para moviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS Open Source desarrollado por Twitter y un regalo a la comunidad de desarrolladores web-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="shortcut icon" href="img/1x/eso.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
+    <title>Formulario Atleta</title>
+  </head>
+
+  <header class="menu">
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="atleta.html">Atletas</a>
+        <a href="coach.html">Coach</a>
+        <a href="asistente.html">Asistentes</a>
+        <a href="pag.html">Pagos</a>
+        <a href="conpag.html">Administrar Precios</a>
+    </nav>
+        <a href="ubicacion.html">
+            <img class="icon" src="img/1x/eso.png" alt="">
+        </a>
+  </header>
+
+
+<body>
+    <div class="container">
+        <form>
+           <h1 class="titulo">REGISTRO DE ATLETAS</h1>
+          
+          <div class ="form-group" id="idsect" style="display:none;">
+            <label for="id">ID:</label>
+            <input type="text" id="id" placeholder="" class="form-control"required disabled>
+          </div>
+          
+          <div class ="form-group">
+          <label for="nombre">NOMBRE:</label>
+          <input type="text" id="nombre" placeholder="Ingresa nombre" class="form-control"required> </div>
+          
+          <div class ="form-group">
+          <label for="telefono">TELEFONO:</label>
+          <input type="text" id="telefono" placeholder="Ingresa telefono" class="form-control"required> </div>
+
+          <button class="btn btn-info" id="botong" onclick="guardar()">Guardar</button>
+          <button class="btn btn-info" style="display: none;" id="save" onclick="SaveEdit()">Actualizar</button>
+        </form>
+        <div class="titulo2">
+          <div class ="form-group2">
+            <label for="clave">Atletas Existentes</label>
+            <a id="clave"></a>
+          </div>
+            
+            <div id="tatleta">
+            </div>
+        </div>
+    </div>
+    <script src="atleta.js"></script>
+    <!-- jQuery first para framework Jquery, Popper.js para ToolTips, y Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- DONDE TENDREMOS NUESTROS CODIGOS PARA GRABAR Y CONSULTA DE DATOS EXISTENTES -->
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+    
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-analytics.js"></script>
+</body>
+</html>
